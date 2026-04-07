@@ -47,7 +47,7 @@ class Config:
     ALLOWED_EXTENSIONS = {'pdf', 'md', 'txt', 'markdown'}
 
     # Text processing configuration
-    DEFAULT_CHUNK_SIZE = 500  # Default chunk size
+    DEFAULT_CHUNK_SIZE = 3000 # Default chunk size
     DEFAULT_CHUNK_OVERLAP = 50  # Default overlap size
 
     # OASIS simulation configuration
