@@ -218,7 +218,7 @@ class GraphBuilderService:
         chunks: List[str],
         batch_size: int = 10,
         progress_callback: Optional[Callable] = None,
-        max_workers: int = 4
+        max_workers: int = 8
     ) -> List[str]:
         """Add text in parallel batches to graph, return uuid list of all episodes"""
         episode_uuids = []
