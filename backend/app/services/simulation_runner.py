@@ -1130,14 +1130,14 @@ class SimulationRunner:
         cleaned_files = []
         errors = []
         
-        # Files to delete (including database files)
+        # Files to delete (preserving simulation databases with agent personas)
         files_to_delete = [
             "run_state.json",
             "simulation.log",
             "stdout.log",
             "stderr.log",
-            "twitter_simulation.db",  # Twitter platform database
-            "reddit_simulation.db",   # Reddit platform database
+            # "twitter_simulation.db",  # PRESERVED: contains generated agent personas
+            # "reddit_simulation.db",   # PRESERVED: contains generated agent personas
             "env_status.json",        # Environment status file
         ]
         

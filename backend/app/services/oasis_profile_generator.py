@@ -69,20 +69,16 @@ class OasisAgentProfile:
             "created_at": self.created_at,
         }
 
-        # Add additional persona information (if available)
-        if self.age:
-            profile["age"] = self.age
-        if self.gender:
-            profile["gender"] = self.gender
-        if self.mbti:
-            profile["mbti"] = self.mbti
-        if self.country:
-            profile["country"] = self.country
+        # Add persona information (with defaults to prevent OASIS KeyError)
+        profile["age"] = self.age if self.age else 30
+        profile["gender"] = self.gender if self.gender else "other"
+        profile["mbti"] = self.mbti if self.mbti else "ISTJ"
+        profile["country"] = self.country if self.country else "US"
         if self.profession:
             profile["profession"] = self.profession
         if self.interested_topics:
             profile["interested_topics"] = self.interested_topics
-        
+
         return profile
     
     def to_twitter_format(self) -> Dict[str, Any]:
@@ -99,22 +95,18 @@ class OasisAgentProfile:
             "created_at": self.created_at,
         }
 
-        # Add additional persona information
-        if self.age:
-            profile["age"] = self.age
-        if self.gender:
-            profile["gender"] = self.gender
-        if self.mbti:
-            profile["mbti"] = self.mbti
-        if self.country:
-            profile["country"] = self.country
+        # Add persona information (with defaults to prevent OASIS KeyError)
+        profile["age"] = self.age if self.age else 30
+        profile["gender"] = self.gender if self.gender else "other"
+        profile["mbti"] = self.mbti if self.mbti else "ISTJ"
+        profile["country"] = self.country if self.country else "US"
         if self.profession:
             profile["profession"] = self.profession
         if self.interested_topics:
             profile["interested_topics"] = self.interested_topics
-        
+
         return profile
-    
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert to complete dictionary format"""
         return {
